@@ -1,7 +1,15 @@
 import './styles/global.scss';
+import RepositoryList from './components/RepositoryList';
+import Counter from './components/Counter'
 
 function App() {
-  return <div>oi</div>;
+  return (
+    <>
+      <RepositoryList />
+      <Counter />
+    </>
+  )
+  ;
 }
 
 export default App;
