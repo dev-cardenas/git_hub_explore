@@ -1,14 +1,12 @@
 
 function RepositoryItem({
-  repository,
-  description,
-  link
+  repository
 }) {
   return (
     <li>
-      <strong>{repository ?? 'Default'}</strong>
-      <p>{description}</p>
-      <a href={link}></a>
+      <strong>{repository?.name ?? 'Default'}</strong>
+      <p>{repository?.description}</p>
+      <a href={repository?.html_url}></a>
     </li>
   )
 }
