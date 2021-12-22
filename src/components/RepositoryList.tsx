@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import RepositoryItem from './RepositoryItem';
 import '../styles/repositories.scss';
 
-const repository = {
-  name: 'unform',
-  description: 'Forms in React',
-  link: 'https://github.com/unform/unform'
+interface Repository {
+  name: string;
+  description: string;
+  html_url: string;
 }
 
 function RepositoryList() {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   useEffect(() => {
     fetch('https://github.com/orgs/rocketseat/repos')
@@ -18,7 +18,7 @@ function RepositoryList() {
   }, []);
 
   return (
-    <section classNmae="repository-list">
+    <section className="repository-list">
       <h1>Lista de Repositorios</h1>
       <ul>
         {
